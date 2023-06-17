@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My node.js app</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav class="header-nav">
+        <a href="/" class="main">Главная страница</a>
+        <% if (session.isAuthenticated) { %>
+            <div class="header-right">
+                <a href="/dashboard" class="profile">Профиль</a>
+                <a href="/logout" class="logout">Выход</a> 
+            </div>
+        <% } else { %>
+            <div class="header-right">
+                <a href="/login" class="login">Вход</a> 
+                <a href="/register" class="register">Регистрация</a> 
+            </div>
+        <% } %>
+    </nav>
+</body>
+</html>

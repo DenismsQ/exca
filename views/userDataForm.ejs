@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add User Data</title>
+  </head>
+  <body>
+    <h1>Add User Data</h1>
+    <form
+      action="/dashboard/user-data"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <label for="nickname">Логин:</label>
+      <input
+        type="text"
+        name="nickname"
+        id="nickname"
+        value="<%= userDetails.nickname %>"
+      />
+
+      <label for="avatarUrl">Аватар url:</label>
+      <% if (userDetails.avatarUrl) { %>
+      <img src="<%= userDetails.avatarUrl %>" alt="Current avatar" srcset="" />
+      <% } else { % >
+      <p>No avatar</p>
+      <% } %>
+      <input type="file" name="avatar" id="avatar" />
+
+      <label for="nickname">О себе:</label>
+      <textarea name="about" id="about"><%= userDetails.about %></textarea>
+
+      <button type="submit">Добавить | обновить данные</button>
+    </form>
+  </body>
+</html>

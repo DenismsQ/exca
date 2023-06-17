@@ -1,0 +1,19 @@
+<!-- ./index.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <%- include('./header.ejs') %>
+    
+    <div class="container">
+        <h1 class="h1-welcome-title">Добро пожаловать на главную страницу</h1>
+        <p class="p-welcome-title">Здесь вы можете найти много интересной информации.</p>
+        <a href="/articles" class="article-btn">Перейти к статьям</a>
+    </div>
+</body>
+</html>

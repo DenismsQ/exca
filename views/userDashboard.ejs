@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="./css/userDashboard.css">
+</head>
+<body>
+    <%- include('./header.ejs') %>
+    <main>
+        <div class="clearfix">
+            <div class="left-column">
+                <h1>Личный кабинет</h1>
+                <h2>Ваш профиль</h2>
+                <% if (userDetails && userDetails.avatarUrl !== null && userDetails.avatarUrl !== undefined) { %>
+                    <img src="<%= userDetails.avatarUrl %>" alt="Avatar">
+                <% } else { %>
+                    <p>No avatar available</p>
+                <% } %>
+                <p>Имя: <%= userDetails ? userDetails.nickname : 'N/A' %></p>
+                <p>Описание: <%= userDetails ? userDetails.about : 'N/A' %></p>
+            </div>
+            <div class="right-column">
+                <h2>Редактировать профиль</h2>
+                <form action="/dashboard/add-data" method="POST" enctype="multipart/form-data">
+                    <label for="nickname">Имя:</label>
+                    <input type="text" name="nickname" id="nickname" required>
+                  
+                    <label for="about">Описание:</label>
+                    <textarea name="about" id="about" rows="5" required resize="none"></textarea>
+                  
+                    <label for="avatar">Аватар:</label>
+                    <input type="file" name="avatar" id="avatar">
+                  
+                    <button type="submit">Обновить</button>
+                </form>
+        
+                <form action="/dashboard/delete-data" method="POST">
+                    <button type="submit">Очистить данные</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

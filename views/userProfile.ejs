@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Профиль</title>
+  </head>
+  <body>
+    <h1>Ваш профиль</h1>
+    <h2><%= userDetails.nickname %></h2>
+    <p><%= userDetails.about %></p>
+
+    <% if (userDetails.avatarUrl) { %>
+    <img
+      class="avtr"
+      src="<%= userDetails.avatarUrl %>"
+      alt="Current avatar"
+      srcset=""
+    />
+    <% } else { %>
+    <p>No avatar</p>
+    <% } %>
+    <form
+      id="delete-avatar-form"
+      action="/dashboard/profile/<%= userDetails.user._id %> /delete-avatar"
+      method="post"
+    >
+      <button type="submit">Delete avatar</button>
+    </form>
+
+    <button><a href="/dashboard/user-data">Обновить данные</a></button>
+
+    <script>
+      const deleteForm = document.querySelector("#delete-avatar-form");
+      deleteForm.addEventListener("submit", (event) => {
+        const confirmDelete = confirm(
+          "Are you sure want to delete the avatar?"
+        );
+        if (!confirmDelete) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>

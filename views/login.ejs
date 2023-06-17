@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <%- include('./header.ejs') %>
+    <div class="limiter">
+        <div class="login-container">
+    <div class="wrap-login">
+        <div class="login-form">
+    <h1 class="h1_login">Вход</h1>
+    <form action="/login" method="post">
+        <div class="login-input-wrap">
+        <input type="email" name="email" placeholder="email" class="login_input" required>
+        </div>
+        <br>
+        <div class="login-input-wrap">
+        <input type="password" name="password" placeholder="password" class="login_input" required>      
+        </div>
+
+        <br>
+        <div class="login-button-container">
+        <button type="submit" class="login_button">Войти</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

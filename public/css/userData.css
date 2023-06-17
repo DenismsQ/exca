@@ -1,0 +1,103 @@
+/* userData.css */
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input,
+textarea {
+    width: 55%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Стилизация текущего аватара */
+.current-avatar {
+    margin-top: 20px;
+}
+
+.current-avatar img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.current-avatar p {
+    margin-top: 10px;
+    text-align: center;
+    color: #666;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+  
+    input,
+    textarea {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 300px;
+    }
+}
