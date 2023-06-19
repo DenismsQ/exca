@@ -10,8 +10,6 @@ router.use('/', indexRoutes);
 router.use('/login',loginRoutes)
 router.use('/logout', logoutRoutes);
 router.use('/register',registerRoutes);
-
-// Добавляем путь "/dashboard" для включения dashboardRoutes
 router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;

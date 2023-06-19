@@ -9,7 +9,7 @@
 <body>
     <%- include('./header.ejs') %>
     <main>
-        <div class="clearfix">
+        <div class="clearfix-column">
             <div class="left-column">
                 <h1>Личный кабинет</h1>
                 <h2>Ваш профиль</h2>
@@ -35,12 +35,34 @@
                   
                     <button type="submit">Обновить</button>
                 </form>
-        
-                <form action="/dashboard/delete-data" method="POST">
-                    <button type="submit">Очистить данные</button>
-                </form>
+                    <button onclick="document.getElementById('id01').style.display='block'">Очистить данные</button>
+            </div>    
             </div>
-        </div>
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+                <form class="modal-content" action="/dashboard/delete-data" method="POST">
+                  <div class="container-modal">
+                    <h1>Delete Account</h1>
+                    <p>Are you sure you want to delete your account?</p>
+                    <div class="clearfix-modal">
+                      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                      <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              </form>
+              <script>
+              // Get the modal
+              var modal = document.getElementById('id01');
+              
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+              }
+              </script>
     </main>
 </body>
 </html>

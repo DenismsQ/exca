@@ -1,4 +1,3 @@
-<!-- ./index.ejs -->
 
 <!DOCTYPE html>
 <html>
@@ -6,14 +5,46 @@
     <meta charset="UTF-8">
     <title>Главная страница</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/card.css">
 </head>
 <body>
     <%- include('./header.ejs') %>
     
     <div class="container">
         <h1 class="h1-welcome-title">Добро пожаловать на главную страницу</h1>
-        <p class="p-welcome-title">Здесь вы можете найти много интересной информации.</p>
-        <a href="/articles" class="article-btn">Перейти к статьям</a>
     </div>
+    <div class="card-container">
+        <div class="card-grid">
+            <% if (session.isAuthenticated) { %>
+        <div class="card">
+                <form action="/new-card" method="POST" enctype="multipart/form-data" >
+                <input type="file" name="imageUrl" id="imageUrl" >
+            <h2 class="card-name"><input type="text" name="name" id="name" required ></h2>
+            <p class="card-about"><textarea name="about" id="about" rows="5" required resize="none" ></textarea></p>
+            <p class="card-price"><input type="text" name="price" id="price" required ></p>
+            <p class="card-btn"><button type="submit">Добавить</button></p>
+            </form>
+        </div>
+            <% } %>
+            
+        
+        <% for (let i = 0; i < mainPage.length; i++) { %>
+        <div class="card">
+            <% if (mainPage[i].imageUrl !== null && mainPage[i].imageUrl !== undefined) { %>
+            <img class="card-image" src="<%= mainPage[i].imageUrl %>" alt="image">
+            <% } else { %>
+                <p class="card-noimg">N/A</p>
+            <% } %>
+            <h2 class="card-name"><%= mainPage[i].name %></h2>
+            <p class="card-about"><%= mainPage[i].about %></p>
+            <p class="card-price"><%= mainPage[i].price %></p>
+            <p class="card-btn"><button>Купить</button></p>
+        </div>
+        <% } %>
+    </div>
+    </div>
+
+
+    <%- include('./footer.ejs') %>
 </body>
 </html>

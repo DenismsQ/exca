@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>My node.js app</title>
+    <title>header</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <div class="header-bg">
     <nav class="header-nav">
         <a href="/" class="main">Главная страница</a>
         <% if (session.isAuthenticated) { %>
@@ -20,5 +21,6 @@
             </div>
         <% } %>
     </nav>
+</div>
 </body>
 </html>

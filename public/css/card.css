@@ -1,0 +1,102 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* добавлено */
+  justify-content: space-between;
+  height: 100%;
+}
+.card-image {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin: auto;
+}
+.card-noimg {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+}
+.card-price {
+  color: grey;
+  font-size: 1.5em;
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+} 
+.card-about {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  overflow-y: auto;
+  font-size: 1.2em;
+}
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #43383e;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  margin-top: 1em;
+}
+.card-container {
+  max-width: max-content;
+  margin: 0 auto;
+  padding-bottom: 8em;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 319px);
+  grid-gap: 1em;
+  padding: 1em;
+}
+.card-btn {
+  border: none;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  margin-top: 1em;
+}
+.card-btn:hover {
+  opacity: 0.7;
+}
+.card-name {
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1.8em;
+  margin-top: 0;
+  line-height: 130%;
+}
+  @media all and (min-width: 1024px) and (max-width: 1280px) {
+    .card-grid {
+    grid-template-columns: repeat(2,319px);
+  } 
+  .footer-nav {
+    display: block;
+  }
+}
+   @media all and (min-width: 768px) and (max-width: 1024px) { 
+    .card-grid {
+      grid-template-columns: repeat(2,319px);
+    }
+   } 
+   @media all and (min-width: 480px) and (max-width: 768px) { 
+    .card-grid {
+      grid-template-columns: repeat(1,319px);
+    } 
+   } 
+   @media all and (max-width: 480px) {
+    .card-grid {
+      grid-template-columns: repeat(1,319px);
+    }
+   }

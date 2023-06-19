@@ -5,7 +5,7 @@
 
 .h1_login {
     font-family: Oswald-Medium;
-    font-size: 30px;
+    font-size: 2.3em;
     color: #43383e;
     line-height: 1.2;
     text-align: center;
@@ -76,12 +76,17 @@
 .login_button:hover{background-color: #333;}
 
 .header-nav {
+  font-size: 1.41em;
+  margin: 0 auto;
+  max-width: 1920px;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
-  background-color: #333;
   }
-  
+  .header-bg {
+  background-color: #333;
+  overflow: hidden;
+  width: 100%;
+  }
   .header-nav a {
     float: left;
     color: #f2f2f2;
@@ -100,18 +105,12 @@
     font-weight: bold;
   }
   
-  .header-nav .login {
-    margin-left: 2em;
-  }
 
   .header-nav .register {
-    margin-left: 15px;
-  }
-  .header-nav .profile {
-    margin-left: 2em;
+    margin-left: 1vw;
   }
   .header-nav .logout {
-    margin-left: 15px;
+    margin-left: 1vw;
   }
   .header-right{
     float: right;
@@ -127,32 +126,184 @@
   }
   
   .container {
-    max-width: 800px;
+    max-width: 80vw;
     margin: 0 auto;
-    padding: 2em;
+    padding: 2vw;
   }
   
   .h1-welcome-title {
-    font-size: 3em;
+    font-size: 2.4em;
     text-align: center;
     margin-top: 2em;
   }
-  
-  .p-welcome-title {
-    line-height: 1.5;
-  }
-  
-  .article-btn {
-    display: inline-block;
-    padding: 0.5em 1em;
+
+  .footer-bg {
+    width: 100%;
+    overflow: hidden;
     background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 0.5em;
-    text-decoration: none;
-    cursor: pointer;
+    color: white;
+    text-align: center;
   }
+  ul {
+    list-style-type: none;
+  }
+  .footer-nav {
+    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    max-width: 1920px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.8em;
+    line-height: 130%;
+    }
+
+    .footer-name {
+    padding: 0.8em;
+    }
+    .footer-about {
+      margin-left: auto;
+      padding: 0.8em;
+    }
+    .footer-contact {
+      padding: 0.8em;
+      margin-inline: 1.2em;
+      margin-right: 2.8em;
+    }
+    .footer-nav h2 {
+      font-size: 1.21em;
+    }
+    .footer-nav a {
+      font-size: 0.91em;
+      color: white;
+      text-decoration: none;
+    }
+    .footer-nav a:hover {
+      opacity: 0.7;
+    }
+
+    @media all and (min-width: 1024px) and (max-width: 1280px) {
+      .login-container {
+        align-items: normal;
+      }
+      .wrap-login {
+        width: auto;
+        margin-top: 9em;
+
+      }
+      .login_input {
+        font-size: 2.4em;
+        height: 3em;
+      }
+      .h1_login { 
+        font-size: 2.8em;
+      }
+      .login_button {
+        font-size: 2.5em;
+      }
+      .header-nav {
+      justify-content: center;
+      }
+      .header-right {
+        margin-left: 6em;
+      }
+    .footer-about {
+      margin-left: 6em;
+      padding: 0.8em;
+    }
+    }
+     @media all and (min-width: 768px) and (max-width: 1024px) {
+      .login-container {
+        align-items: normal;
+      } 
+      .wrap-login {
+        width: auto;
+        margin-top: 9em;
+      }
+      .login_input {
+        font-size: 3.6em;
+        height: 3em;
+      }
+      .h1_login { 
+        font-size: 4em;
+      }
+      .login_button {
+        font-size: 3.7em;
+      }
+      .header-nav {
+        justify-content: center;
+        }
+        .header-right {
+          margin-left: 6em;
+        }
+    } 
+     @media all and (min-width: 480px) and (max-width: 768px) { 
+      .login-container {
+        align-items: normal;
+
+      }
+      .wrap-login {
+        width: auto;
+        margin-top: 9em;
+
+      }
+      .login_input {
+        font-size: 2.4em;
+        height: 3em;
+      }
+      .h1_login { 
+        font-size: 2.8em;
+      }
+      .login_button {
+        font-size: 2.5em;
+      }
+      .header-nav {
+        justify-content: center;
+        }
+        .header-right {
+          margin-left: 3em;
+        }
+      .footer-nav {
+        display: block;
+      }
+      .footer-bg {
+        overflow: auto;
+      }
+    } 
+     @media all and (max-width: 480px) {
+      .login-container {
+        align-items: normal;
+      }
+      .wrap-login {
+        width: auto;
+        margin-top: 9em;
+
+      }
+      .login_input {
+        font-size: 2.4em;
+        height: 3em;
+      }
+      .h1_login { 
+        font-size: 2.8em;
+      }
+      .login_button {
+        font-size: 2.5em;
+      }
+      .header-nav {
+        justify-content: center;
+        }
+        .header-right {
+          margin-left: 2.8em;
+        }
+      .footer-nav {
+        display: block;
+      }
+      .footer-bg {
+        overflow: auto;
+      }
+    }
+
+
   
-  .article-btn:hover {
-    background-color: #555;
-  }
